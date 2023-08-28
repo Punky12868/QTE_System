@@ -24,23 +24,28 @@ public class QTESpawn : MonoBehaviour
     
     private void Awake()
     {
-        if (endlesQTE || resetQTEOnFail)
-        {
-            failTilSuccesQTE = false;
-            useQuantityTilFail = false;
-            onlyOneQTE = false;
-        }
-        else if (useQuantityTilFail)
-        {
-            failTilSuccesQTE = false;
-            onlyOneQTE = false;
-        }
-
         if (onlyOneQTE)
         {
+            endlesQTE = false;
+            resetQTEOnFail = false;
+            failTilSuccesQTE = false;
+            useQuantityTilFail = false;
             qteQuantity = 1;
             GetComponent<QTEConditions>().oneChance = true;
         }
+        else if (resetQTEOnFail)
+        {
+            endlesQTE = false;
+            failTilSuccesQTE = false;
+            useQuantityTilFail = false;
+        }
+        else if (useQuantityTilFail)
+        {
+            endlesQTE = false;
+            failTilSuccesQTE = false;
+        }
+
+        
 
         storedQTEQuantity = qteQuantity;
         storedRefillQuantityTimer = refillQuantityTimer;
@@ -194,6 +199,8 @@ public class QTESpawn : MonoBehaviour
     }
     private void ResetOnFail()
     {
+        refillQuantityTimer = storedRefillQuantityTimer;
+        restoreQuantity = false;
         qteQuantity = storedQTEQuantity;
         qteSystem.qteTrigger = true;
     }
