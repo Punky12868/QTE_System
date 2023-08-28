@@ -78,9 +78,11 @@ public class QTESpawn : MonoBehaviour
             }
             else
             {
-                for (int i = 1; i < qteQuantity; i++)
+                int i = 1;
+                if (qteQuantity > i)
                 {
                     StartEvent();
+                    i++;
                 }
             }
         }
@@ -99,9 +101,11 @@ public class QTESpawn : MonoBehaviour
             }
             else
             {
-                for (int i = 1; i < qteQuantity; i++)
+                int i = 1;
+                if (qteQuantity > i)
                 {
                     StartEvent();
+                    i++;
                 }
             }
         }
@@ -116,9 +120,11 @@ public class QTESpawn : MonoBehaviour
             }
             else
             {
-                for (int i = 1; i < qteQuantity; i++)
+                int i = 1;
+                if (qteQuantity > i)
                 {
                     StartEvent();
+                    i++;
                 }
             }
         }
@@ -134,9 +140,11 @@ public class QTESpawn : MonoBehaviour
             }
             else
             {
-                for (int i = 1; i < qteQuantity; i++)
+                int i = 1;
+                if (qteQuantity > i)
                 {
                     StartEvent();
+                    i++;
                 }
             }
         }
