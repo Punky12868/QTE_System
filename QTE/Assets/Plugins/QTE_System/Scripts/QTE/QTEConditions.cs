@@ -20,6 +20,11 @@ public class QTEConditions : MonoBehaviour
     {
         if (!oneChance)
         {
+            if (!GetComponent<QTESpawn>().useQuantityTilFail)
+            {
+                successesNecessariesForSucceeding = GetComponent<QTESpawn>().qteQuantity;
+                successesNecessariesForSucceeding = 1;
+            }
             if (!GetComponent<QTESpawn>().failTilSuccesQTE)
             {
                 successesNecessariesForSucceeding = GetComponent<QTESpawn>().qteQuantity;
@@ -35,11 +40,6 @@ public class QTEConditions : MonoBehaviour
             GetComponent<QTESpawn>().onlyOneQTE = true;
             GetComponent<QTESpawn>().failTilSuccesQTE = false;
             GetComponent<QTESpawn>().endlesQTE = false;
-
-            if (GetComponent<QTESpawn>().useQuantityTilFail)
-            {
-                failesNecessariesForFailing = 1;
-            }
         }
     }
     public void GetResult()
