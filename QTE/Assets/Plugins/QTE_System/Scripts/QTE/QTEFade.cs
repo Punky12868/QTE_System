@@ -30,7 +30,7 @@ public class QTEFade : MonoBehaviour
     {
         if (notIntantFadeOut > 0)
         {
-            notIntantFadeOut -= Time.deltaTime;
+            notIntantFadeOut -= Time.unscaledDeltaTime;
         }
         else
         {
