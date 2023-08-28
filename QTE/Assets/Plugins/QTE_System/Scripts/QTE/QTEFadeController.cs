@@ -15,7 +15,7 @@ public class QTEFadeController : MonoBehaviour
         {
             qteFade.alphaLerpInSpeed = alphaLerpInSpeed;
             qteFade.alphaLerpOutSpeed = alphaLerpOutSpeed;
-            qteFade.notIntantFadeOut = notIntantFadeOut;
+            qteFade.notInstantFadeOut = notIntantFadeOut;
             qteFade.startingFade = startingFade;
         }
     }

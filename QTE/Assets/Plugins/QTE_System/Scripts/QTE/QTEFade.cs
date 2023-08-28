@@ -28,9 +28,9 @@ public class QTEFade : MonoBehaviour
     }
     public void FadeOut()
     {
-        if (notIntantFadeOut > 0)
+        if (notInstantFadeOut > 0)
         {
-            notIntantFadeOut -= Time.unscaledDeltaTime;
+            notInstantFadeOut -= Time.unscaledDeltaTime;
         }
         else
         {
