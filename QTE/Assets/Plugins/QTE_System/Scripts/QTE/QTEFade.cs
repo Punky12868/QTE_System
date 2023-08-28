@@ -5,13 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(CanvasGroup))]
 public class QTEFade : MonoBehaviour
 {
-    [SerializeField] CanvasGroup template;
-    [SerializeField] float alphaLerpInSpeed = 0.1f;
-    [SerializeField] float alphaLerpOutSpeed = 0.08f;
-    [SerializeField] float notIntantFadeOut = 0.3f;
+    [HideInInspector] public CanvasGroup template;
+    [HideInInspector] public float alphaLerpInSpeed = 0.1f;
+    [HideInInspector] public float alphaLerpOutSpeed = 0.08f;
+    [HideInInspector] public float notIntantFadeOut = 0.3f;
     [HideInInspector] public float startingFade = 0;
     private void Awake()
     {
+        FindObjectOfType<QTEFadeController>().qteFade = this;
+        FindObjectOfType<QTEFadeController>().AssignVariables();
         template = GetComponent<CanvasGroup>();
         template.alpha = startingFade;
     }
@@ -42,6 +44,7 @@ public class QTEFade : MonoBehaviour
             {
                 FindObjectOfType<QTESpawn>().Fade();
             }
+            FindObjectOfType<QTEFadeController>().qteFade = null;
             Destroy(this.gameObject);
         }
     }

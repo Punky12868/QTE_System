@@ -290,6 +290,8 @@ GameObject:
   - component: {fileID: 1436854988}
   - component: {fileID: 1436854987}
   - component: {fileID: 1436854989}
+  - component: {fileID: 1436854991}
+  - component: {fileID: 1436854990}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -401,7 +403,7 @@ MonoBehaviour:
   canvas: {fileID: 1436854985}
   template: {fileID: 9098031227465108659, guid: 693cc6450eff8934784115a2b5be9a35, type: 3}
   forceStart: 1
-  useSpawnScript: 0
+  useSpawnScript: 1
   forceStartKey: 32
 --- !u!114 &1436854988
 MonoBehaviour:
@@ -430,12 +432,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5932f8895b0f8164fbbaa7982fadb44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qteQuantity: 3
-  playOnAwake: 0
+  onlyOneQTE: 0
+  qteQuantity: 10
+  refillQuantityTimer: 5
+  playOnAwake: 1
   playOnAwakeTime: 5
+  useQuantityTilFail: 1
+  resetQTEOnFail: 0
   endlesQTE: 0
   failTilSuccesQTE: 0
   usingFade: 0
+--- !u!114 &1436854990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436854982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9601316e68062a4bba2b5c33a7e6af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  success: 0
+  fail: 0
+  oneChance: 0
+  successesNecessariesForSucceeding: 0
+  failesNecessariesForFailing: 0
+  succeses: 0
+  fails: 0
+  succeded:
+    m_PersistentCalls:
+      m_Calls: []
+  failed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1436854991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436854982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22e40faf8f6bac4981b3a7286c665ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  qteFade: {fileID: 0}
+  alphaLerpInSpeed: 0.1
+  alphaLerpOutSpeed: 0.08
+  notIntantFadeOut: 0.3
+  startingFade: 0
 --- !u!1 &1929850261
 GameObject:
   m_ObjectHideFlags: 0

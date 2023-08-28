@@ -7,10 +7,10 @@ public class QTEConditions : MonoBehaviour
 {
     [HideInInspector] public bool success;
     [HideInInspector] public bool fail;
-    public bool oneChance;
+    [HideInInspector] public bool oneChance;
 
-    public int successesNecessariesForSucceeding;
-    public int failesNecessariesForFailing;
+    [HideInInspector] public int successesNecessariesForSucceeding;
+    [HideInInspector] public int failesNecessariesForFailing;
     [HideInInspector] public int succeses;
     [HideInInspector] public int fails;
 

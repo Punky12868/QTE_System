@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(QTETimer))]
 [RequireComponent(typeof(QTESpawn))]
 [RequireComponent(typeof(QTEConditions))]
+[RequireComponent(typeof(QTEFadeController))]
 public class QTESystem : MonoBehaviour
 {
     QTETimer timer;
