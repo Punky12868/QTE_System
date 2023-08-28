@@ -15,6 +15,7 @@ public class QTESpawn : MonoBehaviour
     [SerializeField] bool playOnAwake;
     [SerializeField] float playOnAwakeTime = 5;
 
+    public bool useQuantityTilFail;
     public bool resetQTEOnFail;
     public bool endlesQTE;
     public bool failTilSuccesQTE;
@@ -24,6 +25,12 @@ public class QTESpawn : MonoBehaviour
     private void Awake()
     {
         if (endlesQTE || resetQTEOnFail)
+        {
+            failTilSuccesQTE = false;
+            useQuantityTilFail = false;
+            onlyOneQTE = false;
+        }
+        else if (useQuantityTilFail)
         {
             failTilSuccesQTE = false;
             onlyOneQTE = false;
@@ -99,6 +106,10 @@ public class QTESpawn : MonoBehaviour
             {
                 ResetOnFail();
             }
+            else if (useQuantityTilFail)
+            {
+                LooseOnFail();
+            }
             else
             {
                 int i = 1;
@@ -137,6 +148,10 @@ public class QTESpawn : MonoBehaviour
             else if (resetQTEOnFail)
             {
                 ResetOnFail();
+            }
+            else if (useQuantityTilFail)
+            {
+                LooseOnFail();
             }
             else
             {
@@ -181,5 +196,9 @@ public class QTESpawn : MonoBehaviour
     {
         qteQuantity = storedQTEQuantity;
         qteSystem.qteTrigger = true;
+    }
+    private void LooseOnFail()
+    {
+        qteQuantity = 1;
     }
 }
