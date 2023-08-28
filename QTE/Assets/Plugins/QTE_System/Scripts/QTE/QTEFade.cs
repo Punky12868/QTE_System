@@ -8,7 +8,7 @@ public class QTEFade : MonoBehaviour
     [HideInInspector] public CanvasGroup template;
     [HideInInspector] public float alphaLerpInSpeed = 0.1f;
     [HideInInspector] public float alphaLerpOutSpeed = 0.08f;
-    [HideInInspector] public float notIntantFadeOut = 0.3f;
+    [HideInInspector] public float notInstantFadeOut = 0.3f;
     [HideInInspector] public float startingFade = 0;
     private void Awake()
     {
