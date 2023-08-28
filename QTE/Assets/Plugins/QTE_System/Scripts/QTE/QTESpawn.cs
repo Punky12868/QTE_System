@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DiegoBravo
+{
 public class QTESpawn : MonoBehaviour
 {
     QTESystem qteSystem;
@@ -221,3 +223,5 @@ public class QTESpawn : MonoBehaviour
         qteQuantity = 1;
     }
 }
+}
+

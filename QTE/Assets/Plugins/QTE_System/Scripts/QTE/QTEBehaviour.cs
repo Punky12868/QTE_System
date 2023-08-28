@@ -4,8 +4,9 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-//[RequireComponent(typeof(QTEFade))]
-public class QTEBehaviour : MonoBehaviour
+namespace DiegoBravo
+{
+    public class QTEBehaviour : MonoBehaviour
 {
     QTESystem qteSystem;
     QTEConditions qteConditions;
@@ -163,3 +164,5 @@ public class QTEBehaviour : MonoBehaviour
         }
     }
 }
+}
+

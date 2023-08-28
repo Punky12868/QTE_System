@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DiegoBravo
+{
 public class QTEFadeController : MonoBehaviour
 {
     [HideInInspector] public QTEFade qteFade;
@@ -19,4 +21,5 @@ public class QTEFadeController : MonoBehaviour
             qteFade.startingFade = startingFade;
         }
     }
+}
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DiegoBravo
+{
 [RequireComponent(typeof(QTETimer))]
 [RequireComponent(typeof(QTESpawn))]
 [RequireComponent(typeof(QTEConditions))]
@@ -98,3 +100,5 @@ public class QTESystem : MonoBehaviour
         }
     }
 }
+}
+

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DiegoBravo
+{
 public class QTETimer : MonoBehaviour
 {
     QTESystem qteSystem;
@@ -37,3 +39,5 @@ public class QTETimer : MonoBehaviour
         }
     }
 }
+}
+

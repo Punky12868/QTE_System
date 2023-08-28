@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+namespace DiegoBravo
+{ 
 public class QTEConditions : MonoBehaviour
 {
     [HideInInspector] public bool success;
@@ -91,4 +93,5 @@ public class QTEConditions : MonoBehaviour
             }
         }
     }
+}
 }

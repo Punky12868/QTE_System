@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DiegoBravo
+{
 public class QTE_ChangeCameraColor : MonoBehaviour
 {
     public void Success()
@@ -12,4 +14,5 @@ public class QTE_ChangeCameraColor : MonoBehaviour
     {
         FindObjectOfType<Camera>().backgroundColor = new Color32(255, 0, 0, 255);
     }
+}
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace DiegoBravo
+{
 [RequireComponent(typeof(CanvasGroup))]
 public class QTEFade : MonoBehaviour
 {
@@ -49,3 +51,5 @@ public class QTEFade : MonoBehaviour
         }
     }
 }
+}
+
