@@ -75,7 +75,7 @@ public class QTEBehaviour : MonoBehaviour
                 if (qteSystem.status == "Correct")
                 {
                     // do something
-                    if (usingConditions)
+                    if (usingConditions && !FindObjectOfType<QTESpawn>().endlesQTE)
                     {
                         qteConditions.success = true;
                         qteConditions.GetResult();
@@ -93,7 +93,7 @@ public class QTEBehaviour : MonoBehaviour
                 else
                 {
                     // do something
-                    if (usingConditions)
+                    if (usingConditions && !FindObjectOfType<QTESpawn>().endlesQTE)
                     {
                         qteConditions.fail = true;
                         qteConditions.GetResult();
@@ -117,7 +117,7 @@ public class QTEBehaviour : MonoBehaviour
                 if (qteSystem.status == "Correct")
                 {
                     // do something
-                    if (usingConditions)
+                    if (usingConditions && !FindObjectOfType<QTESpawn>().endlesQTE)
                     {
                         qteConditions.success = true;
                         qteConditions.GetResult();
@@ -135,7 +135,7 @@ public class QTEBehaviour : MonoBehaviour
                 else
                 {
                     // do something
-                    if (usingConditions)
+                    if (usingConditions && !FindObjectOfType<QTESpawn>().endlesQTE)
                     {
                         qteConditions.fail = true;
                         qteConditions.GetResult();

@@ -8,7 +8,7 @@ public class QTESpawn : MonoBehaviour
     public bool onlyOneQTE;
     public int qteQuantity = 3;
     int storedQTEQuantity;
-    [SerializeField] float refillQuantityTimer = 5;
+    [HideInInspector] public float refillQuantityTimer;
     float storedRefillQuantityTimer;
     bool restoreQuantity;
 
@@ -24,6 +24,10 @@ public class QTESpawn : MonoBehaviour
     
     private void Awake()
     {
+        if (GetComponent<QTETimer>().timer > refillQuantityTimer)
+        {
+            refillQuantityTimer = GetComponent<QTETimer>().timer + 2;
+        }
         if (onlyOneQTE)
         {
             endlesQTE = false;
