@@ -20,12 +20,12 @@ public class QTEConditions : MonoBehaviour
     {
         if (!oneChance)
         {
-            if (!GetComponent<QTESpawn>().useQuantityTilFail)
+            if (GetComponent<QTESpawn>().useQuantityTilFail)
             {
                 successesNecessariesForSucceeding = GetComponent<QTESpawn>().qteQuantity;
-                successesNecessariesForSucceeding = 1;
+                failesNecessariesForFailing = 1;
             }
-            if (!GetComponent<QTESpawn>().failTilSuccesQTE)
+            else if (!GetComponent<QTESpawn>().failTilSuccesQTE)
             {
                 successesNecessariesForSucceeding = GetComponent<QTESpawn>().qteQuantity;
                 failesNecessariesForFailing = GetComponent<QTESpawn>().qteQuantity;

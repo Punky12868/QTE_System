@@ -24,6 +24,14 @@ public class QTESpawn : MonoBehaviour
     
     private void Awake()
     {
+        if (qteQuantity > 1)
+        {
+            useQuantityTilFail = true;
+        }
+        else
+        {
+            onlyOneQTE = true;
+        }
         if (GetComponent<QTETimer>().timer > refillQuantityTimer)
         {
             refillQuantityTimer = GetComponent<QTETimer>().timer + 2;

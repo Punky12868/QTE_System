@@ -436,7 +436,7 @@ MonoBehaviour:
   qteQuantity: 3
   refillQuantityTimer: 5
   playOnAwake: 1
-  playOnAwakeTime: 10
+  playOnAwakeTime: 5
   useQuantityTilFail: 0
   resetQTEOnFail: 0
   endlesQTE: 0
