@@ -10,6 +10,7 @@ namespace DiegoBravo
 [RequireComponent(typeof(QTEFadeController))]
 public class QTESystem : MonoBehaviour
 {
+        [HideInInspector] public bool isPaused;
     QTETimer timer;
     [SerializeField] KeyCode[] keys;
     [HideInInspector] public int keyIndex;
@@ -64,41 +65,51 @@ public class QTESystem : MonoBehaviour
         timer.timer = timer.storedTime;
         timer.timerIsRunning = true;
     }
-    private void GetInput()
-    {
-        if (canPress && Input.anyKeyDown)
+        private void GetInput()
         {
-            customTemplateTrigger = true;
-            if (Input.GetKeyDown(keys[keyIndex]))
+            if (canPress && Input.anyKeyDown)
             {
-                status = "Correct";
-                canPress = false;
+                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    //do nothing
+                }
+                else
+                {
+                    customTemplateTrigger = true;
+                    if (Input.GetKeyDown(keys[keyIndex]))
+                    {
+                        status = "Correct";
+                        canPress = false;
 
-                timer.timerIsRunning = false;
-                timer.timer = 0;
+                        timer.timerIsRunning = false;
+                        timer.timer = 0;
+                    }
+                    else
+                    {
+                        status = "Incorrect";
+                        canPress = false;
+
+                        timer.timerIsRunning = false;
+                        timer.timer = 0;
+                    }
+                }
             }
-            else
-            {
-                status = "Incorrect";
-                canPress = false;
 
-                timer.timerIsRunning = false;
-                timer.timer = 0;
+            if (!isPaused)
+            {
+                if (timer.timerIsRunning)
+                {
+                    timer.StartCountDown();
+                }
             }
         }
-
-        if (timer.timerIsRunning)
+        private void ForceStart()
         {
-            timer.StartCountDown();
+            if (Input.GetKeyUp(forceStartKey) && !qteTrigger && !canPress)
+            {
+                qteTrigger = true;
+            }
         }
     }
-    private void ForceStart()
-    {
-        if (Input.GetKeyUp(forceStartKey) && !qteTrigger && !canPress)
-        {
-            qteTrigger = true;
-        }
-    }
-}
 }
 

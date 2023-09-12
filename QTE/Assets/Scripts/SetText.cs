@@ -22,7 +22,7 @@ public class SetText : MonoBehaviour
     }
     private void Update()
     {
-        if (i <= dialogue.Length)
+        if (i < dialogue.Length)
         {
             if (timeMarks[i] > timeCheck - timeWindow && timeMarks[i] < timeCheck + timeWindow)
             {

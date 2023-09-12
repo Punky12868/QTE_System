@@ -6,19 +6,12 @@ using UnityEngine;
 public class SetPlayback : MonoBehaviour
 {
     public VideoPlayer video;
-    public bool setPlay, setPause;
-
-    private void Update()
+    public void Resume()
     {
-        if (setPlay)
-        {
-            video.playbackSpeed = 1;
-            setPlay = false;
-        }
-        if (setPause)
-        {
-            video.playbackSpeed = 0;
-            setPause = false;
-        }
+        video.playbackSpeed = 1;
+    }
+    public void Stop()
+    {
+        video.playbackSpeed = 0;
     }
 }
