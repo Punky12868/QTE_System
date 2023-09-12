@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Plugins/QTE_System/Examples/QTE_DefaultTemplateExample.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Va11HallaMenu.unity
+    guid: 64ae8f6571668da4bba6867384549422
+  - enabled: 1
+    path: Assets/Scenes/Va11HallaQTE_Gameplay.unity
+    guid: e9bf0a47e655dea4b8e2fb5ab91a24ae
   m_configObjects: {}
