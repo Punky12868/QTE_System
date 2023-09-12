@@ -5,15 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    private AudioManager audio;
+    private void Start()
+    {
+        audio = FindObjectOfType<AudioManager>();
+    }
     public void StartGame()
     {
+        audio.NoVideo();
         SceneManager.LoadScene("Va11HallaQTE_Gameplay");
     }
 
-    public void CreditScene()
-    {
-        SceneManager.LoadScene("Credits");
-    }
+    
 
     public void Settings()
     {
