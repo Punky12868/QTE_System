@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Martita Silva \u2014"
+  m_text: "Martita Silva \u2014 Artista"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6597b5dd565d57c4fa1ee169d0615fd2, type: 2}
   m_sharedMaterial: {fileID: 43913693408269420, guid: 6597b5dd565d57c4fa1ee169d0615fd2, type: 2}
@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Diego Bravo \u2014"
+  m_text: "Diego Bravo \u2014 Programador"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6597b5dd565d57c4fa1ee169d0615fd2, type: 2}
   m_sharedMaterial: {fileID: 43913693408269420, guid: 6597b5dd565d57c4fa1ee169d0615fd2, type: 2}
@@ -2660,7 +2660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Nicolas Campos \u2014"
+  m_text: "Nicolas Campos \u2014 Programador"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6597b5dd565d57c4fa1ee169d0615fd2, type: 2}
   m_sharedMaterial: {fileID: 43913693408269420, guid: 6597b5dd565d57c4fa1ee169d0615fd2, type: 2}
@@ -4514,7 +4514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Camilo Moreno \u2014 "
+  m_text: "Camilo Moreno \u2014 Artista"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6597b5dd565d57c4fa1ee169d0615fd2, type: 2}
   m_sharedMaterial: {fileID: 43913693408269420, guid: 6597b5dd565d57c4fa1ee169d0615fd2, type: 2}
