@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 using DiegoBravo;
 
@@ -8,11 +9,10 @@ public class Pause : MonoBehaviour
 {
     StartQTEAnimatic qte_start;
     public GameObject pauseMenu;
+    public Button pauseButton;
     public static bool cannotPause;
     public static bool isPausedByQTE;
     public static bool pausedEverything;
-
-    bool test;
     private void Awake()
     {
         qte_start = FindObjectOfType<StartQTEAnimatic>();
@@ -60,6 +60,8 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0f;
         isPausedByQTE = true;
         pausedEverything = true;
+
+        pauseButton.interactable = false;
     }
     public void PauseByQTE()
     {
@@ -67,6 +69,8 @@ public class Pause : MonoBehaviour
         FindObjectOfType<QTESystem>().isPaused = false;
         Time.timeScale = 0f;
         isPausedByQTE = true;
+
+        pauseButton.interactable = false;
     }
     public void ResumeGameWithoutQTE()
     {
@@ -76,6 +80,8 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;
         isPausedByQTE = false;
         pausedEverything = false;
+
+        pauseButton.interactable = true;
     }
     public void ResumeGameWithQTE()
     {
@@ -85,5 +91,7 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0f;
         isPausedByQTE = true;
         pausedEverything = false;
+
+        pauseButton.interactable = true;
     }
 }

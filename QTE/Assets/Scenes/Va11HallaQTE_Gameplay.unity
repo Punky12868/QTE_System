@@ -843,7 +843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.026250001, y: 0.048888896}
   m_AnchorMax: {x: 0.67249995, y: 0.23111111}
-  m_AnchoredPosition: {x: -30.89972, y: 0.33203125}
+  m_AnchoredPosition: {x: -30.899658, y: 0.33203125}
   m_SizeDelta: {x: -88.3026, y: -11.7114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076344571
@@ -1046,7 +1046,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.119}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.027555672, y: 1}
-  m_AnchoredPosition: {x: -1.7351074, y: 0}
+  m_AnchoredPosition: {x: -1.7352295, y: 0}
   m_SizeDelta: {x: 3.0743, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115315113
@@ -1792,7 +1792,7 @@ MonoBehaviour:
   spawnOnCanvas: 0
   spawnPoint: {fileID: 1422336584}
   canvas: {fileID: 1436854985}
-  template: {fileID: 8106227338955097947, guid: 43ef39f0be306bc4a866e9e8bbeb82fe, type: 3}
+  template: {fileID: 9156435691605392242, guid: 43ef39f0be306bc4a866e9e8bbeb82fe, type: 3}
   forceStart: 0
   useSpawnScript: 1
   forceStartKey: 32
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedTime: 3
   timerIsRunning: 0
-  timer: 2
+  timer: 3
 --- !u!114 &1436854989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,6 +1912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 101526320}
+  pauseButton: {fileID: 1146143705}
 --- !u!1 &1717706331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.97400004, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.8998413, y: 0}
+  m_AnchoredPosition: {x: 1.8999023, y: 0}
   m_SizeDelta: {x: 5.489, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1723895869
