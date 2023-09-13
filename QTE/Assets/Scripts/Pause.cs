@@ -62,6 +62,8 @@ public class Pause : MonoBehaviour
         pausedEverything = true;
 
         pauseButton.interactable = false;
+        pauseButton.gameObject.GetComponent<MouseOverTexture>().text.color = pauseButton.gameObject.GetComponent<MouseOverTexture>().color2;
+        pauseButton.gameObject.GetComponent<MouseOverTexture>().enabled = false;
     }
     public void PauseByQTE()
     {
@@ -69,8 +71,6 @@ public class Pause : MonoBehaviour
         FindObjectOfType<QTESystem>().isPaused = false;
         Time.timeScale = 0f;
         isPausedByQTE = true;
-
-        pauseButton.interactable = false;
     }
     public void ResumeGameWithoutQTE()
     {
@@ -82,6 +82,7 @@ public class Pause : MonoBehaviour
         pausedEverything = false;
 
         pauseButton.interactable = true;
+        pauseButton.gameObject.GetComponent<MouseOverTexture>().enabled = true;
     }
     public void ResumeGameWithQTE()
     {
@@ -93,5 +94,6 @@ public class Pause : MonoBehaviour
         pausedEverything = false;
 
         pauseButton.interactable = true;
+        pauseButton.gameObject.GetComponent<MouseOverTexture>().enabled = true;
     }
 }
