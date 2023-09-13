@@ -22,6 +22,8 @@ public class QTESystem : MonoBehaviour
     [HideInInspector] public bool customTemplateTrigger;
 
     public bool spawnTemplate;
+        public bool spawnOnCanvas;
+    [SerializeField] GameObject spawnPoint;
     [SerializeField] Canvas canvas;
     [SerializeField] GameObject template;
 
@@ -54,7 +56,15 @@ public class QTESystem : MonoBehaviour
     {
         if (spawnTemplate)
         {
-            Instantiate(template, canvas.transform);
+                if (spawnOnCanvas)
+                {
+                    Instantiate(template, canvas.transform);
+                }
+                else
+                {
+
+                    Instantiate(template, spawnPoint.transform);
+                }
         }
 
         keyIndex = Random.Range(0, keys.Length);
