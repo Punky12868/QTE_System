@@ -6,12 +6,14 @@ public class Condition : MonoBehaviour
 {
     public void Good()
     {
-        FindObjectOfType<SetPlayback>().Resume();
-        FindObjectOfType<Pause>().ResumeGame();
+        FindObjectOfType<StartQTEAnimatic>().qte_OnScreen = false;
+        FindObjectOfType<Pause>().ResumeGameWithoutQTE();
+        Debug.Log("Continua el animatic");
     }
     public void Bad()
     {
-        FindObjectOfType<SetPlayback>().Resume();
-        FindObjectOfType<Pause>().ResumeGame();
+        FindObjectOfType<StartQTEAnimatic>().qte_OnScreen = false;
+        FindObjectOfType<Pause>().ResumeGameWithoutQTE();
+        Debug.Log("Pierdes y se reinicia el juego");
     }
 }

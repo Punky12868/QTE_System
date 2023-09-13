@@ -7,6 +7,7 @@ public class StartQTEAnimatic : MonoBehaviour
 {
     SetText setText;
     [SerializeField] float[] qte_timeMarks;
+    public bool qte_OnScreen;
     bool canSpawn;
     int i;
     private void Start()
@@ -34,6 +35,7 @@ public class StartQTEAnimatic : MonoBehaviour
     {
         FindObjectOfType<QTESystem>().qteTrigger = true;
         FindObjectOfType<Pause>().PauseByQTE();
+        qte_OnScreen = true;
         i++;
     }
 }

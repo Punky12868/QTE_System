@@ -6,6 +6,7 @@ using DiegoBravo;
 
 public class Pause : MonoBehaviour
 {
+    StartQTEAnimatic qte_start;
     public GameObject pauseMenu;
     public static bool cannotPause;
     public static bool isPausedByQTE;
@@ -14,6 +15,7 @@ public class Pause : MonoBehaviour
     bool test;
     private void Awake()
     {
+        qte_start = FindObjectOfType<StartQTEAnimatic>();
         pauseMenu.SetActive(false);
         pausedEverything = false;
         isPausedByQTE = false;
@@ -27,17 +29,27 @@ public class Pause : MonoBehaviour
     }
     public void PauseInput()
     {
-        if (isPausedByQTE && !pausedEverything)
+        if (qte_start.qte_OnScreen)
         {
-            PauseGame();
-        }
-        else if (isPausedByQTE && pausedEverything)
-        {
-            ResumeGame();
+            if (!pausedEverything)
+            {
+                PauseGame();
+            }
+            else
+            {
+                ResumeGameWithQTE();
+            }
         }
         else
         {
-            PauseGame();
+            if (!isPausedByQTE)
+            {
+                PauseGame();
+            }
+            else
+            {
+                ResumeGameWithoutQTE();
+            }
         }
     }
     public void PauseGame()
@@ -56,25 +68,22 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0f;
         isPausedByQTE = true;
     }
-    public void ResumeGame()
+    public void ResumeGameWithoutQTE()
     {
-        if (!test)
-        {
-            FindObjectOfType<SetPlayback>().Resume();
-            FindObjectOfType<QTESystem>().isPaused = false;
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1f;
-            isPausedByQTE = false;
-            pausedEverything = false;
-        }
-        else
-        {
-            FindObjectOfType<SetPlayback>().Stop();
-            FindObjectOfType<QTESystem>().isPaused = false;
-            pauseMenu.SetActive(false);
-            Time.timeScale = 0f;
-            isPausedByQTE = true;
-            pausedEverything = false;
-        }
+        FindObjectOfType<SetPlayback>().Resume();
+        FindObjectOfType<QTESystem>().isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPausedByQTE = false;
+        pausedEverything = false;
+    }
+    public void ResumeGameWithQTE()
+    {
+        FindObjectOfType<SetPlayback>().Stop();
+        FindObjectOfType<QTESystem>().isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 0f;
+        isPausedByQTE = true;
+        pausedEverything = false;
     }
 }

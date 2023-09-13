@@ -765,6 +765,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   qte_timeMarks:
   - 4.8
+  - 21.4
+  - 24.7
+  qte_OnScreen: 0
 --- !u!1 &1146143703
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +854,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1436854992}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: PauseGame
+        m_MethodName: PauseInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1243,7 +1246,7 @@ MonoBehaviour:
   spawnTemplate: 1
   canvas: {fileID: 1436854985}
   template: {fileID: 9098031227465108659, guid: 677650b51fcc9924d8c797cd3d4ad0bb, type: 3}
-  forceStart: 1
+  forceStart: 0
   useSpawnScript: 1
   forceStartKey: 32
 --- !u!114 &1436854988
