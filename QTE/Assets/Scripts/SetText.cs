@@ -15,13 +15,22 @@ public class SetText : MonoBehaviour
     [TextArea] public string[] dialogue;
     public float timeCheck, timeWindow;
     [SerializeField] float[] timeMarks;
+    [SerializeField] float antiDeSync;
     int i;
-    private void Start()
+    bool test;
+    private void Awake()
     {
+        Application.targetFrameRate = 60;
+
         setClear = true;
     }
     private void Update()
     {
+        if (Application.targetFrameRate != 60)
+        {
+            Application.targetFrameRate = 60;
+        }
+
         if (i < dialogue.Length)
         {
             if (timeMarks[i] > timeCheck - timeWindow && timeMarks[i] < timeCheck + timeWindow)
@@ -44,7 +53,19 @@ public class SetText : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        timeCheck += Time.deltaTime;
+        if (!Pause.isPausedByQTE_Fail)
+        {
+            if (!test)
+            {
+                if (antiDeSync > timeCheck - timeWindow && antiDeSync < timeCheck + timeWindow)
+                {
+                    FindObjectOfType<Condition>().playable.Play();
+                    FindObjectOfType<SetPlayback>().video.Play();
+                    test = true;
+                }
+            }
+            timeCheck += Time.fixedDeltaTime;
+        }
     }
     public void Set()
     {
