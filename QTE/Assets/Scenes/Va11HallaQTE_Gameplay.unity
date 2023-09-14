@@ -1998,7 +1998,7 @@ GameObject:
   - component: {fileID: 1719876948}
   - component: {fileID: 1719876949}
   m_Layer: 0
-  m_Name: CopaoMP4
+  m_Name: Video 3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
