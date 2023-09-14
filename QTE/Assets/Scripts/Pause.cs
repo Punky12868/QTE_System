@@ -12,6 +12,7 @@ public class Pause : MonoBehaviour
     public Button pauseButton;
     public static bool cannotPause;
     public static bool isPausedByQTE;
+    public static bool isPausedByQTE_Fail;
     public static bool pausedEverything;
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class Pause : MonoBehaviour
         pauseMenu.SetActive(false);
         pausedEverything = false;
         isPausedByQTE = false;
+        isPausedByQTE_Fail = false;
     }
     private void Update()
     {
@@ -91,6 +93,19 @@ public class Pause : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 0f;
         isPausedByQTE = true;
+        pausedEverything = false;
+
+        pauseButton.interactable = true;
+        pauseButton.gameObject.GetComponent<MouseOverTexture>().enabled = true;
+    }
+    public void BadCondition()
+    {
+        FindObjectOfType<SetPlayback>().Stop();
+        FindObjectOfType<QTESystem>().isPaused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPausedByQTE = false;
+        isPausedByQTE_Fail = true;
         pausedEverything = false;
 
         pauseButton.interactable = true;
