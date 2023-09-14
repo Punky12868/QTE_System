@@ -7,30 +7,50 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     
-    [SerializeField]private VideoPlayer video;
 
 
-    private void Start()
+    public VideoPlayer video;
+
+    [SerializeField] AudioSource sfxSource;
+    [SerializeField] AudioSource bgmSource;
+
+    [SerializeField] List<AudioClip> clickClips = new List<AudioClip>();
+    public AudioMixer mixer;
+
+
+    public const string BGM_KEY = "bgmVol";
+    public const string SFX_KEY = "sfxVol";
+
+    void Awake()
     {
-        if(!video)
-        {
-            video = FindObjectOfType<VideoPlayer>();
 
-        }
-        
+
+        LoadVolume();
+
+
     }
 
-    public void NoVideo()
+    public void ClickSound(int audioNumber)
     {
-        video = null;
+        AudioClip clip = clickClips[audioNumber];
+        sfxSource.PlayOneShot(clip);
+
     }
 
+    
 
-    private void Update()
+    void LoadVolume()  //Volumen guardado en VolumeSettings.cs
     {
-        if (!video)
-        {
-            video = FindObjectOfType<VideoPlayer>();
-        }
+
+        float bgmVol = PlayerPrefs.GetFloat(BGM_KEY, 1f);
+       
+        float sfxVol = PlayerPrefs.GetFloat(SFX_KEY, 1f);
+
+
+        mixer.SetFloat(VolumeSettings.MIXER_BGM, Mathf.Log10(bgmVol) * 20);
+
+        mixer.SetFloat(VolumeSettings.MIXER_SFX, Mathf.Log10(sfxVol) * 20);
+
     }
 }
+

@@ -12,7 +12,7 @@ public class MenuController : MonoBehaviour
     }
     public void StartGame()
     {
-        audio.NoVideo();
+        
         SceneManager.LoadScene("Va11HallaQTE_Gameplay");
     }
 
