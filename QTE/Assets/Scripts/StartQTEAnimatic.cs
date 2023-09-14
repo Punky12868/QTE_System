@@ -22,6 +22,7 @@ public class StartQTEAnimatic : MonoBehaviour
             if (qte_timeMarks[i] > setText.timeCheck - setText.timeWindow && qte_timeMarks[i] < setText.timeCheck + setText.timeWindow)
             {
                 canSpawn = true;
+
             }
         }
         
@@ -37,5 +38,7 @@ public class StartQTEAnimatic : MonoBehaviour
         FindObjectOfType<Pause>().PauseByQTE();
         qte_OnScreen = true;
         i++;
+        AudioManager manager = FindObjectOfType<AudioManager>();
+        manager.AudioStartTimer();
     }
 }

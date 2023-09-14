@@ -22,15 +22,20 @@ public class VolumeSettings : MonoBehaviour
         
 
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
-        
+
+        bgmSlider.value = PlayerPrefs.GetFloat(AudioManager.BGM_KEY, 1f);
+
+        sfxSlider.value = PlayerPrefs.GetFloat(AudioManager.SFX_KEY, 1f);
     }
 
     void Start()
     {
         bgmSlider.value = PlayerPrefs.GetFloat(AudioManager.BGM_KEY, 1f);
-       
+        
         sfxSlider.value = PlayerPrefs.GetFloat(AudioManager.SFX_KEY, 1f);
-    
+
+
+        
       
     }
 
@@ -43,15 +48,26 @@ public class VolumeSettings : MonoBehaviour
 
     void SetBGMVolume(float value)
     {
-        mixer.SetFloat(MIXER_BGM, Mathf.Log10(value) * 20);
-   
-            
+        manager.video.SetDirectAudioVolume(0, value);
+        mixer.SetFloat(MIXER_BGM, Mathf.Log10(value)* 20);
+        bgmSlider.value = value;
+
+        if (value <= 0)
+        {
+            bgmSlider.value = bgmSlider.minValue; //should always be 0.0001 or sth of the sort
+        }
     }
 
 
     void SetSFXVolume(float value)
     {
         mixer.SetFloat(MIXER_SFX, Mathf.Log10(value) * 20);
+        sfxSlider.value = value;
+
+        if(value <= 0)
+        {
+            sfxSlider.value = sfxSlider.minValue; //should always be 0.0001 or sth of the sort
+        }
       
     }
 
@@ -63,20 +79,23 @@ public class VolumeSettings : MonoBehaviour
         {
         
             manager.video.SetDirectAudioVolume(0, bgmSlider.value + changeValue);
+            mixer.SetFloat(MIXER_BGM, Mathf.Log10(bgmSlider.value)* 20 + changeValue);
+            SetBGMVolume(bgmSlider.value + changeValue);
 
-            
+
+
         }
-
-        if(sfx)
+        else
         {
 
 
-            mixer.SetFloat(MIXER_SFX, Mathf.Log10(sfxSlider.value) + changeValue);
+            mixer.SetFloat(MIXER_SFX, Mathf.Log10(sfxSlider.value)* 20 + changeValue);
+            SetSFXVolume(sfxSlider.value + changeValue);
 
-            
+
         }
-        
-        
+
+
     }
 
     public void VolButtonMINUS(bool sfx)
@@ -85,17 +104,18 @@ public class VolumeSettings : MonoBehaviour
 
         if (!sfx)
         {
-
+            Debug.Log("minus bgm");
             manager.video.SetDirectAudioVolume(0, bgmSlider.value - changeValue);
-
+            mixer.SetFloat(MIXER_BGM, Mathf.Log10(bgmSlider.value) * 20 - changeValue);
+            SetBGMVolume(bgmSlider.value - changeValue);
 
         }
-
-        if (sfx)
+        else
         {
-
+            Debug.Log("minus sfx");
 
             mixer.SetFloat(MIXER_SFX, Mathf.Log10(sfxSlider.value) - changeValue);
+            SetSFXVolume(sfxSlider.value - changeValue);
 
 
         }

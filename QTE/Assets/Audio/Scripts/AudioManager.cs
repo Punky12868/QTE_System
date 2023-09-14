@@ -37,6 +37,23 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void AudioStartTimer()
+    {
+        AudioClip clip = clickClips[6];
+        sfxSource.PlayOneShot(clip);
+    }
+
+    public void Correct()
+    {
+        AudioClip clip = clickClips[7];
+        sfxSource.PlayOneShot(clip);
+    }
+
+    public void Wrong()
+    {
+        AudioClip clip = clickClips[5];
+        sfxSource.PlayOneShot(clip);
+    }
     
 
     void LoadVolume()  //Volumen guardado en VolumeSettings.cs

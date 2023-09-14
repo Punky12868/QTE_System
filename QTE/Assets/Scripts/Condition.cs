@@ -28,6 +28,8 @@ public class Condition : MonoBehaviour
         FindObjectOfType<Pause>().ResumeGameWithoutQTE();
         qte_i++;
         Debug.Log("Continua el animatic");
+        AudioManager manager = FindObjectOfType<AudioManager>();
+        manager.Correct();
     }
     public void Bad()
     {
@@ -36,6 +38,9 @@ public class Condition : MonoBehaviour
         playable.Stop();
         startTimer = true;
         Debug.Log("Pierdes y se reinicia el juego");
+        AudioManager manager = FindObjectOfType<AudioManager>();
+        manager.Wrong();
+
     }
     private void Start()
     {
