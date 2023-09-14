@@ -12,7 +12,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        video = FindObjectOfType<VideoPlayer>();
+        if(!video)
+        {
+            video = FindObjectOfType<VideoPlayer>();
+
+        }
         
     }
 
@@ -22,5 +26,11 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    
+    private void Update()
+    {
+        if (!video)
+        {
+            video = FindObjectOfType<VideoPlayer>();
+        }
+    }
 }

@@ -16,13 +16,17 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Va11HallaQTE_Gameplay");
     }
 
-    
 
-    public void Settings()
+    public void RestartGame()
     {
-        //get active panel
-    }
+        SceneManager.LoadScene("Va11HallaQTE_Gameplay");
+    }    
 
+    public void ToMenu()
+    {
+        SceneManager.LoadScene("Va11HallaMenu");
+    }
+    
     public void QuitGame()
     {
 #if UNITY_EDITOR
