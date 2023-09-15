@@ -16,6 +16,7 @@ public class SetText : MonoBehaviour
     public float timeCheck, timeWindow;
     [SerializeField] float[] timeMarks;
     [SerializeField] float antiDeSync;
+    [SerializeField] GameObject destroy;
     int i;
     bool test;
     private void Awake()
@@ -61,6 +62,7 @@ public class SetText : MonoBehaviour
                 {
                     FindObjectOfType<Condition>().playable.Play();
                     FindObjectOfType<SetPlayback>().video.Play();
+                    Destroy(destroy);
                     test = true;
                 }
             }

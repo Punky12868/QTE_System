@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    [SerializeField] PanelFade fadeIn;
     private AudioManager audio;
     private void Start()
     {
@@ -12,8 +13,8 @@ public class MenuController : MonoBehaviour
     }
     public void StartGame()
     {
-        
-        SceneManager.LoadScene("Va11HallaQTE_Gameplay");
+        //SceneManager.LoadScene("Va11HallaQTE_Gameplay");
+        fadeIn.fadeIn = true;
     }
 
 
