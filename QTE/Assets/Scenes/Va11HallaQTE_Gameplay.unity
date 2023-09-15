@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5a01572dc13db459b263d948ece35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeIn: {fileID: 0}
 --- !u!114 &101526325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3429,7 +3430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedTime: 3
   timerIsRunning: 0
-  timer: 3
+  timer: 2
 --- !u!114 &1436854989
 MonoBehaviour:
   m_ObjectHideFlags: 0
